@@ -1,0 +1,12 @@
+# docker-compose.yml
+version: "3.7"
+
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - 8080:9090
+    volumes:
+      - type: bind
+        source: ./prometheus.yml
+        target: /etc/prometheus/prometheus.yml
